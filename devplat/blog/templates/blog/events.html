@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+
+
+<br><br><br><br><br><br>
+<div class="row">
+  {% for events in event %}
+  <div class="col-3">
+  
+  
+  <div class="card" style="width: 18rem;">
+    <img src="{{events.image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{events.title}}</h5>
+      <p class="card-text">At  {{events.time}}  <br> By {{events.facilitator}} </p>
+     
+    </div>
+  </div>
+  </div>
+  
+{% endfor %}
+
+</div>
+
+
+
+
+
+{% endblock %}

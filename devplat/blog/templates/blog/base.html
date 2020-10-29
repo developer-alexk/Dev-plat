@@ -1,0 +1,123 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% if title %}
+    <title> Karu DevPlat - {{title}}</title>
+    {% else %}
+    <title>Karu DevPlat</title>
+    {% endif %}
+    
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"><img src="https://img.icons8.com/color/48/000000/app-symbol.png"></a>
+            <h2 class="text-success"><i>Karu DevPlat</i></h2>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav" >
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'register' %}">Post-Problem</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'events' %}">Events</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href=" {% url 'homeacademia' %}">Academia</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+    </header>
+        {% if messages %}
+         {% for message in messages %}
+         <div class="alert alert-{{message.tags}}">
+            {{message}}
+         </div>
+         {% endfor %}
+        {% endif %}
+        {% block content %}{% endblock %}
+    </div>
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+      <div class="container">
+              <div class="row">
+                <div class="col-4">
+                  <h5 class="text-light">Contact Us</h5>
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <img src="https://img.icons8.com/material-rounded/24/000000/filled-sent.png"><strong class="text-light">vkosgei001@gmail.com</strong>
+                    </li>
+                    <li class="nav-item">
+                      <img src="https://img.icons8.com/material-outlined/24/000000/phone.png"><strong class="text-light">0726964270</strong>
+                    </li>
+                    <img src="https://img.icons8.com/material-rounded/24/000000/filled-sent.png"><strong class="text-light">felixonjomba@gmail.com</strong>
+                  </li>
+                  <li class="nav-item">
+                    <img src="https://img.icons8.com/material-outlined/24/000000/phone.png"><strong class="text-light">0717713943</strong>
+                  </li>
+
+
+                  </ul>
+                </div>
+                <div class="col-4 text-light">
+                    <h5 class="text-light">Useful links</h5>
+                    <ul class="nav flex-column">
+                      <li class="nav-item">
+                        <a class="nav-link active text-light" href="#">About Us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-light" href="#">Events</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-light" href="#">Academia</a>
+                      </li>
+
+                    </ul>
+                </div>
+                <div class="col-4">
+                  <h5 class="text-light">Follow us</h5>
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link active text-light" href="#"><img src="https://img.icons8.com/color/50/000000/twitter.png"></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-light" href="#"><img src="https://img.icons8.com/color/48/000000/facebook-new.png"></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-light" href="#"><img src="https://img.icons8.com/color/48/000000/instagram-new.png"></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-light" href="#"></a>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+      </div>
+      <div class="container text-center">
+        <small>Copyright &copy; Your Website</small>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
